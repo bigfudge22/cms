@@ -1,9 +1,9 @@
-<?php  
+<?php
 
 $sname = "localhost";
 $uname = "root";
-$password = "root";
-$port ="8089";
+$password = "6628";
+$port = "3306";
 $db_name = "test_db";
 
 $conn = mysqli_connect($sname, $uname, $password, $db_name, $port);
