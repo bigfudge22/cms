@@ -22,8 +22,11 @@ if (isset($_POST['submit']) && isset($_FILES['my_video'])) {
 			// Now let's Insert the video path into database
 			$sql = "INSERT INTO videos(video_url) 
                    VALUES('$new_video_name')";
-			mysqli_query($conn, $sql);
-			header("Location: view.php");
+			if ($conn->query($sql) === TRUE) {
+				header("Location: view.php");
+			} else {
+				echo "Error: " . $sql . "<br>" . $conn->error;
+			}
 		} else {
 			$em = "You can't upload files of this type";
 			header("Location: index.php?error=$em");

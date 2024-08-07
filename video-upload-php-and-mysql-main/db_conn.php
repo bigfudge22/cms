@@ -9,6 +9,5 @@ $db_name = "test_db";
 $conn = mysqli_connect($sname, $uname, $password, $db_name, $port);
 
 if (!$conn) {
-	echo "Connection failed!";
-	exit();
+	die("Connection failed: " . mysqli_connect_error());
 }
